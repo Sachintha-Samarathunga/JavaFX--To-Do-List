@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="757.0" prefWidth="1138.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ToDoListFormController">
+   <children>
+      <Label fx:id="lblUserId" alignment="CENTER" layoutX="495.0" layoutY="193.0" opacity="0.24" prefHeight="52.0" prefWidth="180.0" style="-fx-background-color: #34495e; -fx-border-radius: 30; -fx-background-radius: 30;" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <Rectangle fx:id="lblGradient" arcHeight="5.0" arcWidth="5.0" height="77.0" layoutX="571.0" layoutY="14.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="540.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.10632570659488558">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.9543469548225403" green="0.9564164876937866" blue="0.9578947424888611" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <ListView fx:id="lstToDo" layoutX="30.0" layoutY="31.0" prefHeight="695.0" prefWidth="492.0" style="-fx-background-color: #dedcfa;" />
+      <Text fx:id="lblWElcomeText" fill="#484848" layoutX="620.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="470.13697052001953">
+         <font>
+            <Font name="Segoe UI Bold" size="22.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="71.0" fitWidth="75.0" layoutX="543.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/logo.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="txtToDo" alignment="CENTER_RIGHT" layoutX="547.0" layoutY="111.0" prefHeight="59.0" prefWidth="566.0" style="-fx-background-radius: 30; -fx-border-radius: 30;">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <Button fx:id="btnUpdate" contentDisplay="CENTER" layoutX="959.0" layoutY="196.0" mnemonicParsing="false" onAction="#btnUpdateOnAction" prefHeight="46.0" prefWidth="154.0" style="-fx-background-color: #00b894; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #576574;" text="UPDATE" textFill="#fff7f7">
+         <font>
+            <Font name="Segoe UI Bold" size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="btnDelete" layoutX="792.0" layoutY="197.0" mnemonicParsing="false" onAction="#btnDeleteOnAction" prefHeight="45.0" prefWidth="154.0" style="-fx-background-color: #e74c3c; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #576574;" text="DELETE" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Separator layoutX="548.0" layoutY="279.0" prefHeight="6.0" prefWidth="566.0" />
+      <Label fx:id="lblError" alignment="CENTER" layoutX="639.0" layoutY="29.0" prefHeight="46.0" prefWidth="431.0" style="-fx-background-color: red;" textFill="WHITE">
+         <font>
+            <Font name="Segoe UI Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblSuccessful" alignment="CENTER" layoutX="639.0" layoutY="29.0" prefHeight="46.0" prefWidth="431.0" style="-fx-background-color: #00b894;" textFill="WHITE">
+         <font>
+            <Font name="Segoe UI Bold" size="20.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="462.0" fitWidth="470.0" layoutX="600.0" layoutY="285.0" opacity="0.02" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/logo.png" />
+         </image>
+      </ImageView>
+      <Pane fx:id="subroot" layoutX="548.0" layoutY="396.0" prefHeight="266.0" prefWidth="566.0" style="-fx-border-color: #576574; -fx-background-color: none; -fx-border-width: 2;">
+         <children>
+            <TextField fx:id="txtDescription" layoutX="23.0" layoutY="46.0" onAction="#txtDescriptionOnAction" prefHeight="59.0" prefWidth="520.0" promptText="Description" style="-fx-background-radius: 30; -fx-border-radius: 30;">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+            </TextField>
+            <Button contentDisplay="CENTER" layoutX="386.0" layoutY="191.0" mnemonicParsing="false" onAction="#btnAddToListOnAction" prefHeight="46.0" prefWidth="154.0" style="-fx-background-color: #00b894; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #576574;" text="ADD TO LIST" textFill="#fff7f7">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <DatePicker fx:id="datePiicker" layoutX="29.0" layoutY="135.0" onAction="#datePickerOnAction" prefHeight="46.0" prefWidth="232.0" promptText="Date" showWeekNumbers="true">
+               <padding>
+                  <Insets left="23.0" />
+               </padding>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></DatePicker>
+            <ColorPicker fx:id="colorPicker" layoutX="308.0" layoutY="135.0" nodeOrientation="LEFT_TO_RIGHT" onAction="#colorPickerOnAction" prefHeight="46.0" prefWidth="232.0">
+               <value>
+                  <Color red="0.06089668720960617" green="0.7473683953285217" blue="0.6215152740478516" />
+               </value>
+            </ColorPicker>
+            <Label fx:id="descriptionError" alignment="CENTER_RIGHT" layoutX="356.0" layoutY="109.0" prefHeight="6.0" prefWidth="170.0" textFill="#fc0000">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="dateError" alignment="CENTER_RIGHT" layoutX="64.0" layoutY="185.0" prefHeight="6.0" prefWidth="170.0" textFill="#fc0000">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Button layoutX="547.0" layoutY="322.0" mnemonicParsing="false" onAction="#btnAddNewTodoOnAction" prefHeight="46.0" prefWidth="225.0" style="-fx-background-color: #3867d6; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #576574;" text="+ ADD NEW TO DO" textFill="WHITE">
+         <font>
+            <Font name="Segoe UI Bold" size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button contentDisplay="CENTER" layoutX="548.0" layoutY="679.0" mnemonicParsing="false" onAction="#btnLogOutOnAction" prefHeight="46.0" prefWidth="154.0" style="-fx-background-color: #00b894; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #576574;" text="&lt;&lt; LOG OUT" textFill="#fff7f7">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <ImageView fitHeight="135.0" fitWidth="123.0" layoutX="420.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/pin.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="txtDateAndTime" alignment="CENTER_RIGHT" layoutX="865.0" layoutY="702.0" prefHeight="19.0" prefWidth="245.0" text="Date" textFill="#5aa5d7">
+         <font>
+            <Font name="Segoe UI Bold" size="15.0" />
+         </font>
+      </Label>
+   </children>
+   <cursor>
+      <Cursor fx:constant="HAND" />
+   </cursor>
+</AnchorPane>

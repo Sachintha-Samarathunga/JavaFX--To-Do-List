@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="root" prefHeight="649.0" prefWidth="477.0" style="-fx-background-color: whiite;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginFormController">
+   <children>
+      <Text fill="#2b0f0f" layoutX="115.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login to To-Do List" wrappingWidth="246.93677520751953">
+         <font>
+            <Font name="System Bold" size="27.0" />
+         </font>
+      </Text>
+      <TextField fx:id="txtUsername" layoutX="39.0" layoutY="250.0" onAction="#txtUsernameOnAction" prefHeight="57.0" prefWidth="398.0" promptText="Username" style="-fx-background-radius: 25; -fx-border-radius: 25;">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </TextField>
+      <PasswordField fx:id="txtPassword" layoutX="39.0" layoutY="364.0" onAction="#txtPasswordOnAction" prefHeight="58.0" prefWidth="398.0" promptText="Password" style="-fx-background-radius: 25; -fx-border-radius: 25;">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </PasswordField>
+      <Label layoutX="47.0" layoutY="211.0" prefHeight="39.0" prefWidth="160.0" text="Username">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="48.0" layoutY="325.0" prefHeight="39.0" prefWidth="160.0" text="Password">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnLogin" layoutX="40.0" layoutY="471.0" mnemonicParsing="false" onAction="#btnLoginOnAction" prefHeight="58.0" prefWidth="398.0" style="-fx-background-color: #0984e3; -fx-background-radius: 25; -fx-border-color: black; -fx-border-radius: 25;" text="Login" textFill="#eaeaea">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Label alignment="CENTER" layoutX="150.0" layoutY="545.0" onMouseClicked="#lblCreateNewAccountOnClicked" prefHeight="14.0" prefWidth="179.0" text="Create New Account" textFill="#3386c1" underline="true">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Label>
+      <Label alignment="CENTER" layoutX="155.0" layoutY="615.0" prefHeight="19.0" prefWidth="169.0" text="Designed By: Sachintha" textFill="#99a9b4">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="90.0" fitWidth="92.0" layoutX="194.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/icons/Icon.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="lblSuccessfull" alignment="CENTER" layoutX="41.0" layoutY="152.0" prefHeight="39.0" prefWidth="398.0" style="-fx-background-radius: 10px; -fx-background-color: #00b894; -fx-border-radius: 10;" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblError" alignment="CENTER" layoutX="41.0" layoutY="152.0" prefHeight="39.0" prefWidth="398.0" style="-fx-background-radius: 10px; -fx-background-color: red; -fx-border-radius: 10;" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblUsernameRequired" alignment="CENTER_RIGHT" layoutX="207.0" layoutY="315.0" prefHeight="18.0" prefWidth="217.0" textFill="#ff6161">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblPasswordRequired" alignment="CENTER_RIGHT" layoutX="207.0" layoutY="426.0" prefHeight="18.0" prefWidth="217.0" textFill="#ff6161">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
